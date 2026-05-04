@@ -545,14 +545,19 @@ def main():
 
         if wyniki:
             df_wyniki = pd.DataFrame([
-                {
-                    'Asortyment': a,
-                    'MAPE': wyniki[a]['mape'],
-                    'R²': wyniki[a]['r2'],
-                    'Ocena': wyniki[a]['ocena']
-                }
-                for a in wyniki
-            ]).sort_values('MAPE').reset_index(drop=True)
+    {
+        'Asortyment': a,
+        'MAPE': wyniki[a]['mape'],
+        'R²': wyniki[a]['r2'],
+        'Ocena': (
+            'Doskonały' if wyniki[a]['mape'] <= 0.15
+            else 'Dobry' if wyniki[a]['mape'] <= 0.20
+            else 'Akceptowalny' if wyniki[a]['mape'] <= 0.30
+            else 'Wymaga danych'
+        )
+    }
+    for a in wyniki
+]).sort_values('MAPE').reset_index(drop=True)
             df_wyniki.index += 1
 
             # Wykres MAPE
