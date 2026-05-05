@@ -295,7 +295,7 @@ def main():
         api_key = ""
         if uzywaj_api:
             api_key = st.text_input(
-                "Klucz OpenWeatherMap API",
+                "f9f6ca2b29ed2a433634e4eceb8c81c6",
                 type="password",
                 help="Uzyskaj bezpłatny klucz na openweathermap.org")
 
