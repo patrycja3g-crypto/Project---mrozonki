@@ -20,100 +20,156 @@ st.set_page_config(
 # ── STYLE CSS ─────────────────────────────────────────────────────────────────
 st.markdown("""
 <style>
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 
-* { font-family: 'DM Sans', sans-serif; }
-
-.main { background-color: #F8F9FC; }
+* {
+    font-family: 'Inter', sans-serif;
+}
 
 .stApp {
-    background: linear-gradient(135deg, #F0F2FA 0%, #E8ECF8 100%);
+    background: #F5F7FB;
+}
+
+/* Główna szerokość i odstępy */
+.block-container {
+    padding-top: 1.5rem;
+    padding-bottom: 2rem;
+    max-width: 1280px;
 }
 
 /* Header */
 .dashboard-header {
-    background: linear-gradient(135deg, #030928 0%, #1A2B6B 100%);
-    padding: 2rem 2.5rem;
-    border-radius: 16px;
+    background: #FFFFFF;
+    padding: 1.6rem 2rem;
+    border-radius: 20px;
     margin-bottom: 1.5rem;
-    box-shadow: 0 8px 32px rgba(3,9,40,0.15);
+    border: 1px solid #E5E7EB;
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
 }
+
 .dashboard-header h1 {
-    color: #EFF2FC;
-    font-size: 1.8rem;
-    font-weight: 700;
+    color: #111827;
+    font-size: 2rem;
+    font-weight: 800;
     margin: 0;
-    letter-spacing: -0.5px;
+    letter-spacing: -0.6px;
 }
+
 .dashboard-header p {
-    color: #C5A181;
-    margin: 0.3rem 0 0 0;
-    font-size: 0.9rem;
+    color: #6B7280;
+    margin: 0.45rem 0 0 0;
+    font-size: 0.95rem;
 }
 
 /* KPI Cards */
 .kpi-card {
-    background: white;
-    border-radius: 12px;
-    padding: 1.2rem 1.5rem;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-    border-left: 4px solid #B4865E;
+    background: #FFFFFF;
+    border-radius: 18px;
+    padding: 1.25rem 1.4rem;
+    box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06);
+    border: 1px solid #E5E7EB;
     margin-bottom: 1rem;
 }
+
 .kpi-value {
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: #030928;
+    font-size: 2rem;
+    font-weight: 800;
+    color: #111827;
     line-height: 1;
 }
+
 .kpi-label {
-    font-size: 0.8rem;
+    font-size: 0.78rem;
     color: #6B7280;
-    margin-top: 0.3rem;
+    margin-top: 0.45rem;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-.kpi-sub {
-    font-size: 0.75rem;
-    color: #B4865E;
-    margin-top: 0.2rem;
-    font-style: italic;
+    letter-spacing: 0.6px;
+    font-weight: 600;
 }
 
-/* Status badges */
-.badge-doskonaly {
-    background: #E6F4EB; color: #2D7D46;
-    padding: 2px 8px; border-radius: 20px;
-    font-size: 0.75rem; font-weight: 600;
-}
-.badge-dobry {
-    background: #EFF6FF; color: #1D4ED8;
-    padding: 2px 8px; border-radius: 20px;
-    font-size: 0.75rem; font-weight: 600;
-}
-.badge-akceptowalny {
-    background: #FEF3C7; color: #B45309;
-    padding: 2px 8px; border-radius: 20px;
-    font-size: 0.75rem; font-weight: 600;
+.kpi-sub {
+    font-size: 0.78rem;
+    color: #2563EB;
+    margin-top: 0.25rem;
 }
 
 /* Sidebar */
-.css-1d391kg { background: #030928; }
 [data-testid="stSidebar"] {
-    background: linear-gradient(180deg, #030928 0%, #1A2B6B 100%);
+    background: #111827;
 }
-[data-testid="stSidebar"] * { color: #EFF2FC !important; }
-[data-testid="stSidebar"] .stSelectbox label { color: #C5A181 !important; }
+
+[data-testid="stSidebar"] * {
+    color: #F9FAFB !important;
+}
+
+[data-testid="stSidebar"] label {
+    color: #E5E7EB !important;
+    font-weight: 600;
+}
+
+[data-testid="stSidebar"] .stSlider,
+[data-testid="stSidebar"] .stCheckbox,
+[data-testid="stSidebar"] .stMultiSelect,
+[data-testid="stSidebar"] .stTextInput {
+    margin-bottom: 1rem;
+}
+
+/* Zakładki */
+.stTabs [data-baseweb="tab-list"] {
+    gap: 0.5rem;
+}
+
+.stTabs [data-baseweb="tab"] {
+    background: #FFFFFF;
+    border-radius: 999px;
+    border: 1px solid #E5E7EB;
+    padding: 0.5rem 1rem;
+    font-weight: 600;
+}
+
+.stTabs [aria-selected="true"] {
+    background: #2563EB !important;
+    color: white !important;
+}
 
 /* Info box */
 .info-box {
-    background: #EFF2FC;
-    border: 1px solid #B4865E;
-    border-radius: 10px;
+    background: #EFF6FF;
+    border: 1px solid #BFDBFE;
+    border-radius: 16px;
     padding: 1rem 1.2rem;
-    margin: 0.5rem 0;
-    font-size: 0.88rem;
-    color: #030928;
+    margin: 0.5rem 0 1rem 0;
+    font-size: 0.9rem;
+    color: #1E3A8A;
+}
+
+/* Tabele */
+[data-testid="stDataFrame"] {
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid #E5E7EB;
+}
+
+/* Przyciski */
+.stDownloadButton button {
+    background: #2563EB;
+    color: white;
+    border-radius: 999px;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    font-weight: 700;
+}
+
+.stDownloadButton button:hover {
+    background: #1D4ED8;
+    color: white;
+}
+
+/* Wykresy */
+.js-plotly-plot {
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 6px 18px rgba(15, 23, 42, 0.05);
 }
 </style>
 """, unsafe_allow_html=True)
