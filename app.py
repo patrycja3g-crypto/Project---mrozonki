@@ -480,9 +480,9 @@ def main():
             fig = go.Figure()
 
             kolory = [
-                '#030928', '#B4865E', '#2D7D46', '#1D4ED8',
-                '#B91C1C', '#6B7280', '#7C3AED', '#0891B2',
-                '#D97706', '#059669'
+                '#2563EB', '#16A34A', '#F97316', '#9333EA',
+    '#0EA5E9', '#EF4444', '#14B8A6', '#64748B',
+    '#EAB308', '#DB2777'
             ]
 
             for i, asort in enumerate(kolumny_asort):
