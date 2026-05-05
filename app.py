@@ -422,8 +422,8 @@ def main():
     # Header
     st.markdown("""
     <div class="dashboard-header">
-        <h1>🍦 Dashboard Prognoz Sprzedaży Lodów</h1>
-        <p>System AI · Kanał tradycyjny · Model XGBoost · Dane pogodowe + kalendarz świąt</p>
+        <h1>🍦 Prognoza sprzedaży mrożonek</h1>
+<p>Interaktywny dashboard popytu · modele ML · pogoda · sezonowość · święta</p>
     </div>
     """, unsafe_allow_html=True)
 
@@ -632,10 +632,10 @@ def main():
                 y=df_prognoza['tmax_°C'],
                 name='tmax (°C)',
                 marker_color=[
-                    '#B91C1C' if t > 28
-                    else '#D97706' if t > 22
-                    else '#1D4ED8'
-                    for t in df_prognoza['tmax_°C']
+                    '#FB7185' if t > 28
+    else '#FDBA74' if t > 22
+    else '#60A5FA'
+    for t in df_prognoza['tmax_°C']
                 ],
                 hovertemplate=(
                     "Tydzień od: %{x}<br>"
@@ -780,10 +780,9 @@ def main():
     st.markdown("---")
     st.markdown("""
     <div style='text-align:center; color:#6B7280; font-size:0.8rem; padding:1rem 0'>
-    🍦 Dashboard Prognoz Sprzedaży Lodów &nbsp;|&nbsp;
-    Model XGBoost · Dane pogodowe + kalendarz świąt polskich &nbsp;|&nbsp;
-    Projekt AI · ALK 2026
-    </div>
+    🍦 <div class="footer-modern">
+🍦 Forecast Hub · ML demand planning · weather-aware sales forecast
+</div>
     """, unsafe_allow_html=True)
 
 if __name__ == "__main__":
